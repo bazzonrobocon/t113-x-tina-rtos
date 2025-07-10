@@ -1,0 +1,12 @@
+menuconfig DRIVERS_CHARGER
+	bool "charger drivers"
+	default n
+
+if DRIVERS_CHARGER
+
+config BQ24725A_CHARGER
+	bool "bq24725a charger driver"
+	default n
+	depends on DRIVERS_TWI
+	depends on DRIVERS_SUNXI_GPADC
+endif

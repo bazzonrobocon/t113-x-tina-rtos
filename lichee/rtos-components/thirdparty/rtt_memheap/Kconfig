@@ -1,0 +1,6 @@
+config COMPONENT_RTT_MEMHEAP
+	bool "RT-Thread heap memory manager"
+	default n
+	help
+		This heap memory manager is extracted form RT-Thread memheap module.
+		It provide similar APIs to manage memory.

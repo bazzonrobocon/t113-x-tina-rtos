@@ -1,0 +1,7 @@
+menu "GMAC Devices"
+
+config DRIVERS_GMAC
+    bool "enable gmac driver"
+    default n
+
+endmenu

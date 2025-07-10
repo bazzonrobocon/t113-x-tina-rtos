@@ -1,0 +1,28 @@
+menu "asr process"
+
+config COMPONENTS_AW_AUDIO_RPBUF_ASR
+	bool "Audio Rpbuf ASR Support"
+	depends on COMPONENTS_AW_AUDIO_ASR && COMPONENTS_RPBUF
+	help
+		This is a demo that introduces how to use rpbuf interface for asr.
+
+config COMPONENTS_AW_AUDIO_RPBUF_OMX_ASR
+	bool "Audio Rpbuf ASR OMX Support"
+	depends on COMPONENTS_AW_AUDIO_RPBUF_ASR && COMPONENTS_OMX_SYSTEM
+	help
+		This is a demo that introduces how to use rpbuf and omx interface for asr.
+
+config COMPONENTS_AW_AUDIO_RPDATA_ASR
+	bool "Audio RpDATA ASR Support"
+	depends on COMPONENTS_AW_AUDIO_ASR && COMPONENTS_RPDATA
+	help
+		This is a demo that introduces how to use rpdata interface for asr.
+
+config COMPONENTS_AW_AUDIO_RPDATA_OMX_ASR
+	bool "Audio RpDATA ASR OMX Support"
+	depends on COMPONENTS_AW_AUDIO_RPDATA_ASR && COMPONENTS_OMX_SYSTEM
+	help
+		This is a demo that introduces how to use rpdata and omx interface for asr.
+
+endmenu
+

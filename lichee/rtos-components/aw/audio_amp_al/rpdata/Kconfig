@@ -1,0 +1,23 @@
+menu "rpdata audio"
+
+config COMPONENTS_AW_AUDIO_RPDATA
+	bool "Audio Amp Rpdata Support"
+	depends on COMPONENTS_AW_AUDIO_AMP_AL && COMPONENTS_RPDATA
+	default n
+	help
+		This is a amp rpdata interface for audio.
+
+menu "rpdata audio utils"
+
+config COMPONENTS_AW_AUDIO_RPDATA_UTILS
+	bool "Audio Amp Rpdata utils Support"
+	depends on COMPONENTS_AW_AUDIO_RPDATA
+	help
+		This is a demo that introduces how to use rpdata with audio in dsp.
+
+source "components/common/aw/audio_amp_al/rpdata/utils/Kconfig"
+
+endmenu
+
+endmenu
+

@@ -1,0 +1,2 @@
+obj-$(CONFIG_PROJECT_T113_I_C906_EVB1_AUTO) += evb1_auto/
+obj-$(CONFIG_PROJECT_T113_I_C906_EVB1_AUTO_FASTBOOT_VIDEO) += evb1_auto_fastboot_video/

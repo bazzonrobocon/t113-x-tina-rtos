@@ -1,0 +1,12 @@
+menu "TVD Devices"
+
+config DRIVERS_TVD
+    bool "enable tvd driver"
+    default n
+
+config TVD_EXCHANGE_WITH_ARM
+    bool "enable tvd exchange control with arm"
+    depends on DRIVERS_TVD
+    default n
+
+endmenu

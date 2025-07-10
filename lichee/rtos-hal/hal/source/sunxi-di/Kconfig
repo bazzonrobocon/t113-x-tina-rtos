@@ -1,0 +1,35 @@
+menu "DE-Interlace Driver"
+
+config DRIVERS_DI
+    bool "enable di driver"
+        default n
+
+config DRIVERS_DI_V1XX
+  bool "Support DI V110/120"
+  depends on (DRIVERS_DI)
+  default n
+  ---help---
+  Say Y here if you want to use DI110/120.
+  Say N here if you do NOT want to use DI110/120.
+  If unsure, say N.
+
+config DRIVERS_DI_V3XX
+  bool "Support DI V300"
+  depends on (DRIVERS_DI)
+  default n
+  ---help---
+  Say Y here if you want to use DI300.
+  Say N here if you do NOT want to use DI300.
+  If unsure, say N.
+
+config HAL_TEST_DI
+  bool "enable sunxi di test command"
+  depends on (DRIVERS_DI)
+  default n
+  ---help---
+  Say Y here if you want to test di110/120.
+  Say N here if you do NOT want to test DI110/120.
+  If unsure, say N.
+
+endmenu
+

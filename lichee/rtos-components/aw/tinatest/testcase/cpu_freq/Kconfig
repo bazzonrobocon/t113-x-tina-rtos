@@ -1,0 +1,13 @@
+config TESTCASE_CPU_FREQ
+	bool "CPU_FREQ Testcase."
+	select COMPONENTS_PM
+	default n
+
+if TESTCASE_CPU_FREQ
+config CPU_FREQ_LOOP_TIMES
+       default "10000"
+       string "loop times"
+       help
+               This means how many cpu_freq test times need to be tested.
+               Please input the reboot times.
+endif

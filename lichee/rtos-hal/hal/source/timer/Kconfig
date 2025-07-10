@@ -1,0 +1,42 @@
+menu "TIMER Devices"
+
+config DRIVERS_TIMER
+    bool "enable timer driver"
+        default y
+
+config DRIVERS_TIMER_AVS
+    bool "enable avs timer driver"
+        default n
+
+config DRIVERS_WAKEUP_TIMER
+    bool "enable timer wakeup driver"
+        default n
+
+config DRIVERS_HTIMER
+    bool "enable hrtimer driver"
+        default n
+
+choice
+    prompt "Configure htimer clk"
+	depends on DRIVERS_HTIMER
+	default HTIMER_CLK_100MHZ
+
+config HTIMER_CLK_200MHZ
+    bool "200MHZ"
+
+config HTIMER_CLK_100MHZ
+    bool "100MHZ"
+
+config HTIMER_CLK_50MHZ
+    bool "50MHZ"
+
+config HTIMER_CLK_25MHZ
+    bool "25MHZ"
+
+endchoice
+
+config HAL_TEST_TIMER
+	bool "enable timer hal APIs test command"
+		depends on DRIVERS_TIMER || DRIVERS_HTIMER
+		default n
+endmenu

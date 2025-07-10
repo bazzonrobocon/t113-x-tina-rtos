@@ -1,0 +1,1 @@
+obj-$(CONFIG_PROJECT_T113_S4P_C906_EVB1_AUTO) += evb1_auto/

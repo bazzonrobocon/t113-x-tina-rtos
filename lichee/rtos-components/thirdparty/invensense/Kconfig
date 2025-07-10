@@ -1,0 +1,10 @@
+
+config COMPONENT_TDK_INVENSENSE
+  bool "TDK InvenSense Sensor support"
+  default n
+
+config COMPONENT_TDK_SENSOR_ICM40608
+    bool "TDK InvenSense ICM-40608 Sensor support"
+    default n
+    depends on COMPONENT_TDK_INVENSENSE
+    select DRIVERS_SPI

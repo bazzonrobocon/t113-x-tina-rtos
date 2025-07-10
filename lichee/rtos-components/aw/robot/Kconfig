@@ -1,0 +1,10 @@
+config COMPONENTS_AW_ROBOT
+    bool "Robot Test"
+    select COMPONENT_CLI
+    select DRIVERS_SUNXI_PWM
+    select DRIVERS_HTIMER
+    select DRIVERS_SUNXI_GPADC
+    default n
+    help
+        Allwiner robot test
+

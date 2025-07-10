@@ -1,0 +1,31 @@
+menu "Real Time Performance Test"
+
+config COMPONENTS_REAL_TIME_PERFORMANCE
+	bool "AW Real Time Performance Test"
+	depends on DRIVERS_HTIMER
+	default n
+	help
+	  Support Real Time Performance Test.
+
+config COMPONENTS_SCHEDULER_JITTER_TEST
+	bool "AW Scheduler Jitter Test Support"
+	depends on COMPONENTS_REAL_TIME_PERFORMANCE
+	default n
+	help
+	  Support Allwinner Scheduler Jitter Test Support.
+
+config COMPONENTS_INTERRUPT_JITTER_TEST
+	bool "AW Interrupt Jitter Test Support"
+	depends on COMPONENTS_REAL_TIME_PERFORMANCE
+	default n
+	help
+	  Support Allwinner Interrupt Jitter Test Support.
+
+config COMPONENTS_OPENAMP_JITTER_TEST
+	bool "AW Openamp Jitter Test Support"
+	depends on COMPONENTS_REAL_TIME_PERFORMANCE
+	default n
+	help
+	  Support Allwinner Openamp Jitter Test Support.
+
+endmenu

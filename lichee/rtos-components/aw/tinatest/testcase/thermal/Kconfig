@@ -1,0 +1,14 @@
+config TESTCASE_THERMAL
+	bool "CPU_THERMAL Testcase."
+	select DRIVERS_EFUSE
+	select DRIVERS_GPADC
+	default n
+
+if TESTCASE_THERMAL
+config THERMAL_LOOP_TIMES
+       default "10000"
+       string "loop times"
+       help
+               This means how many thermal test times need to be tested.
+               Please input the reboot times.
+endif

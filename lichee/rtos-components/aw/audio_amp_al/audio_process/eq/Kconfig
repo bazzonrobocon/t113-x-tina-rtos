@@ -1,0 +1,28 @@
+menu "eq process"
+
+config COMPONENTS_AW_AUDIO_RPBUF_EQ
+	bool "Audio Rpbuf EQ Support"
+	depends on COMPONENTS_AW_AUDIO_EQ && COMPONENTS_RPBUF
+	help
+		This is a demo that introduces how to use rpbuf interface for eq.
+
+config COMPONENTS_AW_AUDIO_RPBUF_OMX_EQ
+	bool "Audio Rpbuf EQ OMX Support"
+	depends on COMPONENTS_AW_AUDIO_RPBUF_EQ && COMPONENTS_OMX_SYSTEM
+	help
+		This is a demo that introduces how to use rpbuf and omx interface for eq.
+
+config COMPONENTS_AW_AUDIO_RPDATA_EQ
+	bool "Audio RpDATA EQ Support"
+	depends on COMPONENTS_AW_AUDIO_EQ && COMPONENTS_RPDATA
+	help
+		This is a demo that introduces how to use rpdata interface for eq.
+
+config COMPONENTS_AW_AUDIO_RPDATA_OMX_EQ
+	bool "Audio RpDATA EQ OMX Support"
+	depends on COMPONENTS_AW_AUDIO_RPDATA_EQ && COMPONENTS_OMX_SYSTEM
+	help
+		This is a demo that introduces how to use rpdata and omx interface for eq.
+
+endmenu
+

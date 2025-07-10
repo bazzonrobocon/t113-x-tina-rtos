@@ -1,0 +1,22 @@
+menu "rpbuf audio"
+
+config COMPONENTS_AW_AUDIO_RPBUF
+	bool "Audio Amp Rpbuf Support"
+	depends on COMPONENTS_AW_AUDIO_AMP_AL && COMPONENTS_RPBUF
+	default n
+	help
+		This is a amp rpbuf interface for audio.
+
+menu "rpbuf audio utils"
+config COMPONENTS_AW_AUDIO_RPBUF_UTILS
+	bool "Audio Amp Rpbuf utils Support"
+	depends on COMPONENTS_AW_AUDIO_RPBUF
+	help
+		This is a demo that introduces how to use rpbuf with audio in dsp.
+
+
+source "components/common/aw/audio_amp_al/rpbuf/utils/Kconfig"
+endmenu
+
+endmenu
+

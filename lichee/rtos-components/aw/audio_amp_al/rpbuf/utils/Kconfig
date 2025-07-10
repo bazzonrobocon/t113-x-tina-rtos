@@ -1,0 +1,52 @@
+menu "rpbuf audio ctrl aec "
+config COMPONENTS_AW_RPBUF_AUDIO_CTRL_AEC
+	bool "Audio Rpbuf Ctrl aec Support"
+	depends on COMPONENTS_AW_AUDIO_RPBUF_UTILS && (COMPONENTS_AW_AUDIO_AEC || COMPONENTS_AW_AUDIO_AEC_DOWNLINK)
+	default n
+	help
+		This is a rpbuf audio ctrl for aec.
+
+	config COMPONENTS_RPBUF_CRTL_AEC_CNT
+	int "Audio Rpbuf Ctrl Aec count Support"
+	depends on COMPONENTS_AW_RPBUF_AUDIO_CTRL_AEC
+	default 1
+	help
+		This is a intger for rpbuf audio ctrl aec.
+
+endmenu
+
+menu "rpbuf audio ctrl eq"
+config COMPONENTS_AW_RPBUF_AUDIO_CTRL_EQ
+	bool "Audio Rpbuf Ctrl eq Support"
+	depends on COMPONENTS_AW_AUDIO_RPBUF_UTILS && COMPONENTS_AW_AUDIO_EQ
+	default n
+	help
+		This is a rpbuf audio ctrl for eq.
+
+config COMPONENTS_RPBUF_CRTL_EQ_CNT
+	int "Audio Rpbuf Ctrl Eq count Support"
+	depends on COMPONENTS_AW_RPBUF_AUDIO_CTRL_EQ
+	default 1
+	help
+		This is a intger for rpbuf audio ctrl eq.
+
+endmenu
+
+menu "rpbuf audio ctrl module process"
+config COMPONENTS_AW_RPBUF_AUDIO_CTRL_MODULE_PROCESS
+	bool "Audio Rpbuf Ctrl module process Support"
+	depends on COMPONENTS_AW_AUDIO_RPBUF_UTILS && COMPONENTS_AW_AUDIO_MODULE_PROCESS
+	default n
+	help
+		This is a rpbuf audio ctrl for eq.
+
+config COMPONENTS_RPBUF_CRTL_MODULE_PROCESS_CNT
+	int "Audio Rpbuf Ctrl module process count Support"
+	depends on COMPONENTS_AW_RPBUF_AUDIO_CTRL_MODULE_PROCESS
+	default 1
+	help
+		This is a intger for rpbuf audio ctrl module process.
+
+endmenu
+
+

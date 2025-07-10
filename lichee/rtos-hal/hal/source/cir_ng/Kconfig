@@ -1,0 +1,10 @@
+menu "SUNXI IRRX Devices"
+
+config DRIVERS_SUNXI_IRRX
+	bool "enable sunxi irrx driver"
+        default n
+
+config HAL_TEST_CIR
+	bool "CIR TEST CASE"
+	default n
+endmenu

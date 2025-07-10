@@ -1,0 +1,93 @@
+;sunxi platform application
+;---------------------------------------------------------------------------------------------------------
+; 说明： 脚本中的字符串区分大小写，用户可以修改"="后面的数值，但是不要修改前面的字符串
+; 描述gpio的形式：Port:端口+组内序号<功能分配><内部电阻状态><驱动能力><输出电平状态>
+;---------------------------------------------------------------------------------------------------------
+
+;---------------------------------------------------------------------------------
+; version:版本1.00
+; machine:板级文件名
+;---------------------------------------------------------------------------------
+[product]
+version = "100"
+machine = "fpga"
+
+;----------------------------------------------------------------------------------
+;twi configuration
+;twi_used	0：关闭, 1：打开
+;twi_port	0:twi0,  1:twi1, 2:twi2, 3:twi3, 4:twi4, 5:twi5, 6:r_twi0, 7:r_twi1
+;twi_scl	boot0 scl的GPIO配置
+;twi_sda	boot0 sda的GPIO配置
+;----------------------------------------------------------------------------------
+;[twi_para]
+;twi_used = 0
+;twi_port = 2
+;twi_scl  = port:PC0<3><1><default><default>
+;twi_sda  = port:PC1<3><1><default><default>
+
+;[twi3]
+;twi_scl  = port:PB6<4><1><default><default>
+;twi_sda  = port:PB7<4><1><default><default>
+
+;[twi2]
+;twi_scl  = port:PG06<3><1><default><default>
+;twi_sda  = port:PG07<3><1><default><default>
+
+;----------------------------------------------------------------------------------
+;uart configuration
+;uart_debug_port  |Boot串口控制器编号        |
+;uart_debug_tx       |Boot串口发送的GPIO配置|
+;uart_debug_rx  |Boot串口接收的GPIO配置     |
+;----------------------------------------------------------------------------------
+;[uart_para]
+;uart_debug_port = 2
+;uart_debug_tx   = port:PC00<2><1><default><default>
+;uart_debug_rx   = port:PC01<2><1><default><default>
+
+[uart0]
+uart_tx   = port:PF02<3><1><default><default>
+uart_rx   = port:PF04<3><1><default><default>
+
+;[uart9]
+;uart_tx   = port:PM00<3><1><default><default>
+;uart_rx   = port:PM01<3><1><default><default>
+
+;--------------------------------
+;[usbc0]: 控制器0的配置。
+;usb_used: USB使能标志。置1，表示系统中USB模块可用,置0,则表示系统USB禁用。
+;usb_port_type: USB端口的使用情况。 0: device only;1: host only;2: OTG
+;usb_detect_type: USB端口的检查方式。0: 不做检测;1: vbus/id检查;2: id/dpdm检查
+;usb_detect_mode: USB端口的检查方式。0: 线程轮询;1: id中断触发
+;usb_id_gpio: USB ID pin脚配置。具体请参考gpio配置说明。
+;usb_det_vbus_gpio: USB DET_VBUS pin脚配置。具体请参考gpio配置说明。
+;usb_drv_vbus_gpio: USB DRY_VBUS pin脚配置。具体请参考gpio配置说明。
+;usb_drv_vbus_type: vbus设置方式。0: 无; 1: gpio; 2: axp。
+;usb_det_vbus_gpio: "axp_ctrl",表示axp 提供。
+;usbh_driver_level: usb驱动能力等级
+;usbh_irq_flag: usb中断标志
+;--------------------------------
+;--------------------------------
+;---       USB0控制标志
+;--------------------------------
+[usbc0]
+usb_used                = 1
+usb_port_type           = 2
+usb_detect_type         = 1
+usb_detect_mode         = 0
+usb_id_gpio             = port:PE12<0><0><default><default>
+usb_det_vbus_gpio       = port:PE12<0><0><default><default>
+usb_drv_vbus_gpio       = port:PB03<1><0><default><default>
+usb_drv_vbus_type       = 1
+usbh_driver_level       = 5
+usbh_irq_flag           = 0
+
+;--------------------------------
+;--------------------------------
+;---       USB1控制标志
+;--------------------------------
+[usbc1]
+usb_used                = 1
+usb_drv_vbus_gpio       = port:PB03<1><0><default><default>
+usb_drv_vbus_type       = 1
+usbh_driver_level       = 5
+usbh_irq_flag           = 0

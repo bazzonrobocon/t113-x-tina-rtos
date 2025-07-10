@@ -1,0 +1,2 @@
+LICHEE_KERN_DEFCONF:=sun8iw20p1_t113s2_dsp0_defconfig
+LICHEE_LSP:=default

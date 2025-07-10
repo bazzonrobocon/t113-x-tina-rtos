@@ -1,0 +1,10 @@
+menu "audio amp log"
+
+config COMPONENTS_AW_AUDIO_AMP_AL_LOG
+	bool "AW audio amp Adaptation Layer Log Support"
+	default n
+	help
+		Support Allwinner audio amp Adaptation Layer Log.
+
+endmenu
+

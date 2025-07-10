@@ -1,0 +1,28 @@
+menu "module process"
+
+config COMPONENTS_AW_AUDIO_RPBUF_MODULE_PROCESS
+	bool "Audio Rpbuf MODULE_PROCESS Support"
+	depends on COMPONENTS_AW_AUDIO_MODULE_PROCESS && COMPONENTS_RPBUF
+	help
+		This is a demo that introduces how to use rpbuf interface for module process.
+
+config COMPONENTS_AW_AUDIO_RPBUF_OMX_MODULE_PROCESS
+	bool "Audio Rpbuf MODULE_PROCESS OMX Support"
+	depends on COMPONENTS_AW_AUDIO_RPBUF_MODULE_PROCESS && COMPONENTS_OMX_SYSTEM
+	help
+		This is a demo that introduces how to use rpbuf and omx interface for module process.
+
+config COMPONENTS_AW_AUDIO_RPDATA_MODULE_PROCESS
+	bool "Audio RpDATA MODULE_PROCESS Support"
+	depends on COMPONENTS_AW_AUDIO_MODULE_PROCESS && COMPONENTS_RPDATA
+	help
+		This is a demo that introduces how to use rpdata interface for module process.
+
+config COMPONENTS_AW_AUDIO_RPDATA_OMX_MODULE_PROCESS
+	bool "Audio RpDATA MODULE_PROCESS OMX Support"
+	depends on COMPONENTS_AW_AUDIO_RPDATA_MODULE_PROCESS && COMPONENTS_OMX_SYSTEM
+	help
+		This is a demo that introduces how to use rpdata and omx interface for module process.
+
+endmenu
+

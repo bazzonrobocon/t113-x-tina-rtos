@@ -1,0 +1,45 @@
+menu "audio process"
+
+config COMPONENTS_AW_AUDIO_PROCESS
+	bool "Audio Process Support"
+	default n
+	help
+		This is a interface for audio process.
+
+config COMPONENTS_AW_AUDIO_AEC
+	bool "Audio AEC Support"
+	depends on COMPONENTS_AW_AUDIO_PROCESS
+	help
+		This is a demo that introduces how to use openmax for aec.
+
+config COMPONENTS_AW_AUDIO_AEC_DOWNLINK
+	bool "Audio AEC DOWNLINK Support"
+	depends on COMPONENTS_AW_AUDIO_PROCESS
+	help
+		This is a demo that introduces how to use openmax for aec downlink.
+
+config COMPONENTS_AW_AUDIO_EQ
+	bool "Audio EQ Support"
+	depends on COMPONENTS_AW_AUDIO_PROCESS
+	help
+		This is a demo that introduces how to use openmax for eq.
+
+config COMPONENTS_AW_AUDIO_ASR
+	bool "Audio ASR Support"
+	depends on COMPONENTS_AW_AUDIO_PROCESS
+	help
+		This is a demo that introduces how to use openmax for asr.
+
+config COMPONENTS_AW_AUDIO_MODULE_PROCESS
+	bool "Audio Module Process"
+	depends on COMPONENTS_AW_AUDIO_PROCESS
+	help
+		This is a demo that introduces how to use audio module process.
+
+source "components/common/aw/audio_amp_al/audio_process/aec/Kconfig"
+source "components/common/aw/audio_amp_al/audio_process/asr/Kconfig"
+source "components/common/aw/audio_amp_al/audio_process/eq/Kconfig"
+source "components/common/aw/audio_amp_al/audio_process/module_process/Kconfig"
+
+endmenu
+

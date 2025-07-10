@@ -1,0 +1,12 @@
+menu "SUNXI GPADC Devices"
+
+config DRIVERS_SUNXI_GPADC
+    bool "enable gpadc-ng driver"
+        default n
+
+config HAL_TEST_SUNXI_GPADC
+    bool "enable gpadc-ng hal APIs test command"
+    depends on DRIVERS_SUNXI_GPADC
+        default n
+
+endmenu

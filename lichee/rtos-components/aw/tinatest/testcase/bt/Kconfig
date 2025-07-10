@@ -1,0 +1,11 @@
+config TESTCASE_BTON
+	bool "bt on Testcase."
+	default n
+
+config TESTCASE_BTOFF
+	bool "bt off Testcase."
+	default n
+
+config TESTCASE_BTSCAN
+	bool "bt scan Testcase."
+	default n

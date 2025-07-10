@@ -1,0 +1,18 @@
+menu "rpbuf audio ctrl asr "
+config COMPONENTS_AW_RPDATA_AUDIO_CTRL_ASR
+	bool "Audio Rpdata Ctrl asr Support"
+	depends on COMPONENTS_AW_AUDIO_RPDATA_UTILS && COMPONENTS_AW_AUDIO_ASR
+	default n
+	help
+		This is a rpdata audio ctrl for asr.
+
+	config COMPONENTS_RPDATA_CRTL_ASR_CNT
+	int "Audio Rpbuf Ctrl Asr count Support"
+	depends on COMPONENTS_AW_RPDATA_AUDIO_CTRL_ASR
+	default 1
+	help
+		This is a intger for rpdata audio ctrl asr.
+
+endmenu
+
+

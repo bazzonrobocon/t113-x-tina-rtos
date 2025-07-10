@@ -1,0 +1,1 @@
+obj-$(CONFIG_COMPONENTS_AW_AUDIO_AMP_AL_LOG) += audio_amp_log.o

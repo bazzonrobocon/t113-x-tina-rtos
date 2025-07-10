@@ -1,0 +1,50 @@
+menu "IOMMU Devices"
+
+config DRIVERS_IOMMU
+    bool "enable iommu driver"
+    default n
+
+if DRIVERS_IOMMU
+config DRIVERS_IOMMU_G2D
+    bool "enable iommu for g2d"
+    default n
+
+config DRIVERS_IOMMU_VE
+    bool "enable iommu for ve"
+    default n
+
+config DRIVERS_IOMMU_DE
+    bool "enable iommu for de"
+    default n
+
+config DRIVERS_IOMMU_CSI
+    bool "enable iommu for csi"
+    default n
+
+config DRIVERS_IOMMU_DI
+    bool "enable iommu for di"
+    default n
+
+config HAL_TEST_IOMMU
+    bool "iommu testcase"
+    default n
+
+config DRIVERS_IOMMU_KERNEL_START_ADDRESS
+    hex "iommu kernel start address"
+    default 0x60000000
+
+config DRIVERS_IOMMU_KERNEL_AREA_SIZE
+    hex "iommu kernel area size"
+    default 0x8000000
+
+config DRIVERS_IOMMU_DMA_START_ADDRESS
+    hex "iommu dma start address"
+    default 0x10000000
+
+config DRIVERS_IOMMU_DMA_AREA_SIZE
+    hex "iommu dma area size"
+    default 0x8000000
+
+endif
+
+endmenu

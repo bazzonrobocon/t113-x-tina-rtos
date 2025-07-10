@@ -1,0 +1,11 @@
+menu "SUNXI PWM Devices"
+config DRIVERS_SUNXI_PWM
+    bool "enable pwm-ng driver"
+        default n
+
+config HAL_TEST_SUNXI_PWM
+    bool "enable pwm-ng hal APIs test command"
+    depends on DRIVERS_SUNXI_PWM
+        default n
+
+endmenu

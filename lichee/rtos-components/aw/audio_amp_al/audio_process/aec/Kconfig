@@ -1,0 +1,40 @@
+menu "aec process"
+
+config COMPONENTS_AW_AUDIO_RPBUF_AEC
+	bool "Audio Rpbuf AEC Support"
+	depends on COMPONENTS_AW_AUDIO_AEC && COMPONENTS_RPBUF
+	help
+		This is a demo that introduces how to use rpbuf interface for aec.
+
+config COMPONENTS_AW_AUDIO_RPBUF_OMX_AEC
+	bool "Audio Rpbuf AEC OMX Support"
+	depends on COMPONENTS_AW_AUDIO_RPBUF_AEC && COMPONENTS_OMX_SYSTEM
+	help
+		This is a demo that introduces how to use rpbuf and omx interface for aec.
+
+config COMPONENTS_AW_AUDIO_RPBUF_AEC_DOWNLINK
+	bool "Audio Rpbuf AEC DOWNLINK Support"
+	depends on COMPONENTS_AW_AUDIO_AEC_DOWNLINK && COMPONENTS_RPBUF
+	help
+		This is a demo that introduces how to use rpbuf interface for aec downlink.
+
+config COMPONENTS_AW_AUDIO_RPBUF_OMX_AEC_DOWNLINK
+	bool "Audio Rpbuf AEC DOWNLINK OMX Support"
+	depends on COMPONENTS_AW_AUDIO_RPBUF_AEC_DOWNLINK && COMPONENTS_OMX_SYSTEM
+	help
+		This is a demo that introduces how to use rpbuf and omx interface for aec.
+
+config COMPONENTS_AW_AUDIO_RPDATA_AEC
+	bool "Audio RpDATA AEC Support"
+	depends on COMPONENTS_AW_AUDIO_AEC && COMPONENTS_RPDATA
+	help
+		This is a demo that introduces how to use rpdata interface for aec.
+
+config COMPONENTS_AW_AUDIO_RPDATA_OMX_AEC
+	bool "Audio RpDATA AEC OMX Support"
+	depends on COMPONENTS_AW_AUDIO_RPDATA_AEC && COMPONENTS_OMX_SYSTEM
+	help
+		This is a demo that introduces how to use rpdata and omx interface for aec.
+
+endmenu
+

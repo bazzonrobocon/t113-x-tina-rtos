@@ -1,0 +1,16 @@
+menu "audio amp Adaptation Layer"
+
+config COMPONENTS_AW_AUDIO_AMP_AL
+	bool "AW audio amp Adaptation Layer Support"
+	default n
+	help
+	  Support Allwinner audio amp Adaptation Layer.
+
+
+source "components/common/aw/audio_amp_al/audio_process/Kconfig"
+source "components/common/aw/audio_amp_al/rpbuf/Kconfig"
+source "components/common/aw/audio_amp_al/rpdata/Kconfig"
+source "components/common/aw/audio_amp_al/log/Kconfig"
+
+endmenu
+

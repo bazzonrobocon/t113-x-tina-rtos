@@ -1,0 +1,12 @@
+menu "TIMESTAMP Devices"
+
+config DRIVERS_TIMESTAMP
+    bool "enable timestamp driver"
+        default n
+
+config HAL_TEST_TIMESTAMP
+    bool "enable timestamp hal APIs test command"
+    depends on DRIVERS_TIMESTAMP
+        default n
+
+endmenu

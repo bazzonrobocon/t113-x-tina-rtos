@@ -1,0 +1,11 @@
+if ARCH_SUN20IW2 || ARCH_SUN55IW3
+
+menu "Test cpufreq Component Support"
+
+config COMPONENTS_TEST_CPUFREQ
+    bool "cpufreq API test commands"
+    default n
+
+endmenu
+
+endif

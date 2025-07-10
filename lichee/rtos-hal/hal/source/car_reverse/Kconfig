@@ -1,0 +1,179 @@
+menu "FASTBOOT Devices"
+
+config DRIVERS_FASTBOOT
+	bool "enable fastboot driver"
+	default n
+
+config CAR_REVERSE_LOG_LEVEL
+	int "log level"
+	default 2
+	range 0 8
+	depends on DRIVERS_FASTBOOT
+
+config PREVIEW_SCREEN_WIDTH
+	int "display screen width"
+	depends on DRIVERS_FASTBOOT
+	default 1280
+
+config PREVIEW_SCREEN_HEIGHT
+	int "display screen height"
+	depends on DRIVERS_FASTBOOT
+	default 800
+
+config PREVIEW_SOURCE_WIDTH
+	int "display input source width"
+	depends on DRIVERS_FASTBOOT
+	default 1280
+
+config PREVIEW_SOURCE_HEIGHT
+	int "display input source height"
+	depends on DRIVERS_FASTBOOT
+	default 800
+choice
+	prompt "display input source format"
+	default PREVIEW_SOURCE_FORMAT_YV12
+
+config PREVIEW_SOURCE_FORMAT_NV16
+	bool "Display input source format NV16"
+	depends on DRIVERS_FASTBOOT
+
+config PREVIEW_SOURCE_FORMAT_NV61
+	bool "display input source format NV61"
+	depends on DRIVERS_FASTBOOT
+
+config PREVIEW_SOURCE_FORMAT_NV12
+	bool "display input source format NV12"
+	depends on DRIVERS_FASTBOOT
+
+config PREVIEW_SOURCE_FORMAT_NV21
+	bool "display input source format NV21"
+	depends on DRIVERS_FASTBOOT
+
+config PREVIEW_SOURCE_FORMAT_YV12
+	bool "display input source format YV12"
+	depends on DRIVERS_FASTBOOT
+
+endchoice
+
+choice
+	prompt "Configure car reverse status"
+	depends on DRIVERS_FASTBOOT
+	default CAR_REVERSE_DEFAULT_STOP
+
+config CAR_REVERSE_DEFAULT_START
+	bool "car reverse enter start"
+
+config CAR_REVERSE_DEFAULT_STOP
+	bool "car reverse enter stop"
+
+config FASTBOOT_VIDEO_DEFAULT_START
+	bool "fastboot video start"
+
+endchoice
+
+config CAR_REVERSE_EXCHANGE_DISP2_PARA
+	bool "support exchange disp2 para for car reverse"
+	default n
+	depends on DRIVERS_FASTBOOT
+
+config EXCHANGE_DISP2_PARA_LEN
+	hex "exchange disp2 para size in elf"
+	depends on CAR_REVERSE_EXCHANGE_DISP2_PARA
+
+menu "VIDEO EARLY Devices"
+config DRIVERS_VIDEO_EARLY
+	bool "enable video early driver"
+	depends on DRIVERS_FASTBOOT
+	default n
+
+config VIDEO_EARLY_RV_DECODE_SUPPORT
+	bool "rtos video decoder for video early"
+	depends on DRIVERS_VIDEO_EARLY
+	default n
+
+config BUFFER_POOL_VE_MEM_ADDR
+	hex "buffer addr for ve use"
+	depends on DRIVERS_VIDEO_EARLY
+
+config BUFFER_POOL_VE_MEM_LEN
+	hex "buffer len for ve use"
+	depends on DRIVERS_VIDEO_EARLY
+
+config BUFFER_POOL_VE_BUFFER_CNT
+	int "Number of buffers for ve use"
+	depends on DRIVERS_VIDEO_EARLY
+	default 5
+endmenu
+
+menu "CAR REVERSE Devices"
+config DRIVERS_CAR_REVERSE
+	bool "enable car reverse driver"
+	depends on DRIVERS_FASTBOOT
+	default n
+
+config CAR_REVERSE_SUPPORT_TVD
+	bool "support tvd input source for car reverse"
+	depends on DRIVERS_CAR_REVERSE && DRIVERS_TVD
+	default n
+
+config CAR_REVERSE_SUPPORT_VIN
+	bool "support vin input source for car reverse"
+	depends on DRIVERS_CAR_REVERSE && DRIVERS_VIN && VIDEO_SUNXI_VIN_SPECIAL
+	default n
+
+config CAR_REVERSE_SUPPORT_AUXILIARY_LINE
+	bool "support auxiliary line display"
+	depends on DRIVERS_CAR_REVERSE
+	default n
+
+config CAR_REVERSE_SUPPORT_PREVIEW_ROTATOR
+	bool "support g2d to rotate preview output"
+	depends on DRIVERS_CAR_REVERSE
+	default n
+
+config CAR_REVERSE_SUPPORT_PREVIEW_ENHANCER
+	bool "support di to enhance preview output"
+	depends on DRIVERS_CAR_REVERSE
+	default n
+
+config CAR_REVERSE_SUPPORT_AMP_CRTL
+	bool "support car reverse to communicate with arm"
+	depends on DRIVERS_CAR_REVERSE
+	default n
+
+config BUFFER_POOL_SWAP_BUFFER_CNT
+	int "Number of buffers for csi/tvd use"
+	depends on DRIVERS_CAR_REVERSE
+	default 3
+
+config BUFFER_POOL_SWAP_CLEAN_BUFFER_CNT
+	int "Number of buffers for di/g2d/display use"
+	depends on DRIVERS_CAR_REVERSE
+	default 6
+
+config BUFFER_POOL_MEM_ADDR
+	hex "buffer addr for car reverse use"
+	depends on DRIVERS_CAR_REVERSE
+
+config BUFFER_POOL_MEM_LEN
+	hex "buffer len for car reverse use"
+	depends on DRIVERS_CAR_REVERSE
+
+config CAR_REVERSE_GPIO_CHECK
+	bool "check gpio for car reverse"
+	depends on DRIVERS_CAR_REVERSE
+	default n
+
+config CAR_REVERSE_STABILITY_TEST
+	bool "stability test for car reverse"
+	depends on DRIVERS_CAR_REVERSE
+	default n
+
+config CAR_REVERSE_MEMORY_LEAK_TEST
+	bool "memory leak test for car reverse"
+	depends on DRIVERS_CAR_REVERSE
+	default n
+endmenu
+
+endmenu
+

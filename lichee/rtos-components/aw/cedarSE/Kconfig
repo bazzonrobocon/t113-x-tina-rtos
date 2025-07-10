@@ -1,0 +1,5 @@
+config COMPONENTS_CEDARSE
+	bool "AW CedarSE Support"
+	default n
+	help
+	  Select Y to support cedarSE.

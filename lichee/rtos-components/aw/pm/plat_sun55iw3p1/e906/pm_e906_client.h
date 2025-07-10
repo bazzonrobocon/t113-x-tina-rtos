@@ -1,0 +1,15 @@
+#ifndef _PM_E906_CLIENT_H_
+#define _PM_E906_CLIENT_H_
+
+#define PM_FINISH_FLAG		(0x1)
+
+#define IRQ_MSGBOX		(17)
+#define MSGBOX_PM_REMOTE	(0)
+#define MSGBOX_PM_RECV_CHANNEL	(2)
+#define MSGBOX_PM_SEND_CHANNEL	(2)
+
+#define PM_CLIENT_SUSPEND	(0xf3f30101)
+#define PM_CLIENT_RESUME	(0xf3f30201)
+
+#endif /* _PM_E906_CLIENT_H_ */
+

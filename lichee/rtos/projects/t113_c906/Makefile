@@ -1,0 +1,2 @@
+obj-$(CONFIG_PROJECT_T113_C906_EVB1) += evb1/
+obj-$(CONFIG_PROJECT_T113_C906_EVB1_AUTO) += evb1_auto/
